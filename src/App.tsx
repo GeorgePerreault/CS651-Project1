@@ -7,21 +7,18 @@ import ContactPage from "./Pages/Contact"; // Import the Contact page
 
 function App() {
   return (
-    <div>
       <Router>
         <Routes>
-<<<<<<< HEAD
-          <Route path="/" element={<SignInPage />} />
+
+            <Route path="/sign-in-page" element={<SignInPage />} />
           <Route path="/home" element={<HomePage />} />
-=======
           <Route path="/sign-in-page" element={<SignInPage />} />
           <Route path="/" element={<HomePage />} />
->>>>>>> d80d2f6 (Initial commit)
+
           <Route path="/about" element={<AboutPage />} /> 
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Router>
-    </div>
   );
 }
 

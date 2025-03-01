@@ -1,25 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-<<<<<<< HEAD
-const HomePage = () => {
-  return (
-   
-    <div>
-         <div>HomePage</div>
-        <Link to="/about">
-          <Button>About</Button>
-        </Link>
-        <Link to="/contact">
-          <Button>Contact</Button>
-        </Link>
-      </div>
-  )
-}
-
-export default HomePage
-=======
-
-
 
 const HomePage = () => {
   return (
@@ -39,11 +19,11 @@ const HomePage = () => {
             <Link to="/sign-in-page">
                 <Button variant="outline" className="px-6 py-2 text-lg bg-black text-white border-black">Sign In</Button>
             </Link>
-                </div>
       </div>
     </div>
+        </div>
   )
 }
 
 export default HomePage
->>>>>>> d80d2f6 (Initial commit)
+

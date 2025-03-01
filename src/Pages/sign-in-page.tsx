@@ -70,7 +70,7 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4 relative">
       <div className={`w-full ${showRegister ? "max-w-4xl flex gap-6 justify-center" : "flex justify-center"}`}>
         <Card className="w-full max-w-md">
           <CardHeader>
@@ -179,6 +179,15 @@ export default function SignInPage() {
           </Card>
         )}
       </div>
+
+
+      <Button
+          className="absolute bottom-4 left-4 px-6 py-2 bg-gray-800 text-white border-2 border-white"
+          onClick={() => navigate("/home")}
+      >
+        Back to Home
+      </Button>
+
     </div>
   );
 }
