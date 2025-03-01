@@ -10,8 +10,13 @@ function App() {
     <div>
       <Router>
         <Routes>
+<<<<<<< HEAD
           <Route path="/" element={<SignInPage />} />
           <Route path="/home" element={<HomePage />} />
+=======
+          <Route path="/sign-in-page" element={<SignInPage />} />
+          <Route path="/" element={<HomePage />} />
+>>>>>>> d80d2f6 (Initial commit)
           <Route path="/about" element={<AboutPage />} /> 
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
