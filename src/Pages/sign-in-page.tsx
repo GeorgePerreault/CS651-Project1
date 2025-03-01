@@ -1,75 +1,77 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
+type LoginData = {
+  username: string;
+  password: string;
+};
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+type RegisterData = {
+  name: string;
+  email: string;
+  username: string;
+  password: string;
+};
 
 export default function SignInPage() {
-  // State for login form
-  const [loginData, setLoginData] = useState({
+  const navigate = useNavigate(); // Initialize navigation
+  const [loginData, setLoginData] = useState<LoginData>({
     username: "",
     password: "",
-  })
+  });
 
-  // State for registration form
-  const [registerData, setRegisterData] = useState({
+  const [registerData, setRegisterData] = useState<RegisterData>({
     name: "",
     email: "",
     username: "",
     password: "",
-  })
+  });
 
-  // State to control registration form visibility
-  const [showRegister, setShowRegister] = useState(false)
+  const [showRegister, setShowRegister] = useState(false);
 
-  // Handle login form input changes
   const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setLoginData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
-  // Handle registration form input changes
   const handleRegisterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setRegisterData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
-  // Handle login form submission
   const handleLoginSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Login submitted:", loginData)
-    // Add actual login logic here
-  }
+    e.preventDefault();
+    console.log("Login submitted:", loginData);
+    
+    // Simulate authentication success and navigate to home page
+    navigate("/home");
+  };
 
-  // Handle registration form submission
   const handleRegisterSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Registration submitted:", registerData)
+    e.preventDefault();
+    console.log("Registration submitted:", registerData);
 
-    // Update login form with registration data
     setLoginData({
       username: registerData.username,
       password: registerData.password,
-    })
+    });
 
-    // Hide registration form
-    setShowRegister(false)
-  }
+    setShowRegister(false);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className={`w-full ${showRegister ? "max-w-4xl flex gap-6 justify-center" : "flex justify-center"}`}>
-        {/* Login Form */}
         <Card className="w-full max-w-md">
           <CardHeader>
             <CardTitle className="text-2xl">Sign In</CardTitle>
@@ -113,7 +115,6 @@ export default function SignInPage() {
           </CardFooter>
         </Card>
 
-        {/* Registration Form - Only shown when showRegister is true */}
         {showRegister && (
           <Card className="w-full max-w-md">
             <CardHeader>
@@ -179,6 +180,5 @@ export default function SignInPage() {
         )}
       </div>
     </div>
-  )
+  );
 }
-
