@@ -27,8 +27,8 @@ const About = () => {
                   </p>
                 </div>
 
-                <div className="relative w-full max-w-[800px] rounded-xl overflow-hidden shadow-xl">
-                  <img src={HeroImg} /> <BorderBeam duration={5} size={170} />
+                <div className="z-0 relative w-full max-w-[800px] rounded-xl overflow-hidden shadow-xl">
+                  <img src={HeroImg} /> <BorderBeam className="z-100" duration={5} size={170} />
                 </div>
               </div>
             </div>
