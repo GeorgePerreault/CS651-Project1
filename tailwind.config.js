@@ -66,7 +66,8 @@ export default {
   			grid: 'grid 15s linear infinite',
   			rainbow: 'rainbow var(--speed, 2s) infinite linear',
   			ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
-  			rippling: 'rippling var(--duration) ease-out'
+  			rippling: 'rippling var(--duration) ease-out',
+  			gradient: 'gradient 8s linear infinite'
   		},
   		keyframes: {
   			grid: {
@@ -170,6 +171,11 @@ export default {
   				'100%': {
   					transform: 'scale(2)',
   					opacity: '0'
+  				}
+  			},
+  			gradient: {
+  				to: {
+  					backgroundPosition: 'var(--bg-size, 300%) 0'
   				}
   			}
   		}
